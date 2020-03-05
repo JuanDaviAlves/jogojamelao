@@ -8,12 +8,17 @@ public class CreepController : MonoBehaviour
 {
     NavMeshAgent agent;
 
-    public GameObject finalTarget;
+    GameObject finalTarget;
 
     // Start is called before the first frame update
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        GameObject obj = GameObject.FindWithTag("Finish");
+        if(obj != null)
+        {
+            finalTarget = obj;
+        }
     }
 
     // Update is called once per frame
