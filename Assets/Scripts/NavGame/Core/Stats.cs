@@ -7,7 +7,7 @@ namespace NavGame.Core
     {
         public int maxHealth = 100;
         public int damage = 10;
-        public int marmor = 10;
+        public int armor = 10;
         public float attackSpeed = 1f;
 
     }
