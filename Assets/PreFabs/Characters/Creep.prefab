@@ -195,8 +195,8 @@ GameObject:
   - component: {fileID: 6863166506911885501}
   - component: {fileID: 6863166506911885498}
   - component: {fileID: 6863166506911885499}
-  - component: {fileID: 114375591762328436}
-  - component: {fileID: 114813103252026206}
+  - component: {fileID: 1316181844193757383}
+  - component: {fileID: 6652402600345599097}
   m_Layer: 0
   m_Name: Creep
   m_TagString: Untagged
@@ -274,7 +274,7 @@ MonoBehaviour:
   ofenseStats:
     damage: 10
     attackSpeed: 1
---- !u!114 &114375591762328436
+--- !u!114 &1316181844193757383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,7 +291,7 @@ MonoBehaviour:
   defenseStats:
     maxHealth: 100
     armor: 10
---- !u!114 &114813103252026206
+--- !u!114 &6652402600345599097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
