@@ -8,6 +8,8 @@ namespace NavGame.Core
     {
         public int currentHealth;
         public DefenseStats defenseStats;
+        public OnHealthChangedEvent onHealthChanged;
+        public OnDiedEvent onDied;
 
         protected virtual void Awake()
         {
@@ -19,6 +21,11 @@ namespace NavGame.Core
             amount -= defenseStats.armor;
             amount = Mathf.Clamp(amount, 1, defenseStats.maxHealth);
             currentHealth -= amount;
+            if (onHealthChanged != null)
+            {
+                onHealthChanged(defenseStats.maxHealth, currentHealth);
+            }
+
             if(currentHealth <= 0)
             {
                 Die();
@@ -27,6 +34,10 @@ namespace NavGame.Core
         public virtual void Die()
         {
             Destroy(gameObject);
+            if(onDied != null)
+            {
+                onDied();
+            }
         }
     }
 }
