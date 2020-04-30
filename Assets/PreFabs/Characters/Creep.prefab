@@ -257,12 +257,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f51758d2bbd7f4399dbd176e5d1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 0.5
   ofenseStats:
-    damage: 10
+    damage: 100
     attackSpeed: 1
+  attackRange: 4
   enemyLayers:
   - Infantry
+  enemiesToAttack: []
 --- !u!114 &1316181844193757383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720b608a03ac8a341ba9bd2f0669b932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularSpeed: 6
   contactRadius: 0.5
   currentHealth: 0
   defenseStats:
