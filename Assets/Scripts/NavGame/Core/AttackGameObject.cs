@@ -7,7 +7,7 @@ using UnityEngine.AI;
 namespace NavGame.Core
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AttackGameObject : TouchableGameObject
+    public abstract class AttackGameObject : TouchableGameObject
     {
         public OfenseStats ofenseStats;
         public float attackRange = 4f;
@@ -76,12 +76,7 @@ namespace NavGame.Core
                     onAttackCast(castTransform.position);
                 }
                 
-                target.TakeDamage(ofenseStats.damage);
-
-                if(onAttackStrike!= null)
-                {
-                    onAttackStrike(target.damageTransform.position);
-                }
+                Attack(target);
             }
         }
 
@@ -128,5 +123,6 @@ namespace NavGame.Core
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackRange);
         }
+        protected abstract void Attack(DamageableGameObject target);
     }
 }
