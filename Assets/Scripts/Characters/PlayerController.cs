@@ -11,6 +11,8 @@ public class PlayerController : TouchableGameObject
     NavMeshAgent agent;
     public LayerMask walkableLayer;
 
+    public GameObject prefab;
+
     Camera cam;
 
     // Start is called before the first frame update
@@ -18,6 +20,12 @@ public class PlayerController : TouchableGameObject
     {
         agent = GetComponent<NavMeshAgent>();
         cam = Camera.main;
+
+        GameObject obj = GameObject.FindWithTag("Finish");
+        DamageableGameObject dgo = obj.GetComponent<DamageableGameObject>();
+        GameObject projectile = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
+        ProjectileController controller = projectile.GetComponent<ProjectileController>();
+        controller.Init(dgo);
     }
 
     // Update is called once per frame
