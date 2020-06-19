@@ -25,7 +25,7 @@ public class PlayerController : TouchableGameObject
         DamageableGameObject dgo = obj.GetComponent<DamageableGameObject>();
         GameObject projectile = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
         ProjectileController controller = projectile.GetComponent<ProjectileController>();
-        controller.Init(dgo);
+        controller.Init(dgo, 20);
     }
 
     // Update is called once per frame
